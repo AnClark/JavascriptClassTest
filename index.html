@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Javascript Class Test</title>
+    <script src="JSClassTest.js"></script>
+    <script>
+        var myStudent = Student.createNew("刘云中","U201516431","法学院","1502");
+
+        function LetsGo(){
+            document.getElementById("outputArea").innerHTML = myStudent.printStudentInfo();
+        }
+
+        function LetsChange() {
+            myStudent.name = "AnClark";
+            myStudent.uid = "HUSTBOY";
+            myStudent.college = "Law School";
+            myStudent.class = "201502";
+
+            alert("Modified. Now reload.");
+            LetsGo();
+        }
+    </script>
+
+    <style>
+        .outputArea{
+            background-color: aquamarine;
+            height:240px;
+            width:320px;
+        }
+    </style>
+</head>
+<body>
+<h1>Javascript 对象操作测试</h1>
+<h2>使用极简主义法</h2>
+
+<input type="button" id="readStudentInfo" onclick="LetsGo()" value="读取学生信息" />
+<input type="button" id="changeStudentInfo" onclick="LetsChange()" value="改一改信息" />
+
+<div class="outputArea" id="outputArea">结果显示区域</div>
+</body>
+</html>
